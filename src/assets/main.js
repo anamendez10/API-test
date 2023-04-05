@@ -1,4 +1,4 @@
-const API = 'https://www.themoviedb.org';
+const API = 'https://www.themoviedb.org/movie';
 const content = null || document.getElementById('content');
 
 const options = {
@@ -12,14 +12,14 @@ const options = {
 }
 
 async function fetchData(urlApi){
-    const response = await fetch(urlApi);
+    const response = await fetch(urlApi, options);
     const data = await response.json();
     return data;
 }
 
 (async () => {
     try{
-        const movies = await fetchData(`${API}/movie`);
+        const movies = await fetchData(API);
         let view = `
         ${movies.id.map(movie => `
             <!-- content -->
