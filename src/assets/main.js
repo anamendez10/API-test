@@ -1,4 +1,4 @@
-const API = 'https://www.themoviedb.org/movie';
+const API = 'https://www.themoviedb.org';
 const content = null || document.getElementById('content');
 
 const options = {
@@ -7,7 +7,7 @@ const options = {
         'Authorization': '09e3489b58096b85aab97f051aaef429', 
         'Content-Type': 'application/json;charset=utf-8',
         'Access-Control-Allow-Origin': 'https://anamendez10.github.io',
-        'Access-Control-Allow-Methods': 'GET'
+        'Access-Control-Allow-Methods': 'GET OPTIONS'
     }
 }
 
