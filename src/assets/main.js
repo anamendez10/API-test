@@ -11,12 +11,6 @@ const options = {
     }
 }
 
-fetch(`${API}/movie`, options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(error => console.log(error))
-
-
 async function fetchData(urlApi){
     const response = await fetch(urlApi);
     const data = await response.json();
