@@ -1,4 +1,6 @@
-const API = 'https://api.themoviedb.org/3/movie/550?api_key=09e3489b58096b85aab97f051aaef429';
+const id = null
+
+const API = 'https://api.themoviedb.org/3/movie';
 const content = null || document.getElementById('content');
 
 const options = {
@@ -20,7 +22,7 @@ async function fetchData(urlApi){
 
 (async () => {
     try{
-        const movies = await fetchData(API);
+        const movies = await fetchData(`${API}/${id}?api_key=09e3489b58096b85aab97f051aaef429`);
         let view = `
         ${movies.id.map(movie => `
             <!-- content -->
