@@ -19,7 +19,7 @@ async function fetchData(urlApi){
 
 (async () => {
     try{
-        const movies = await fetchData(API);
+        const movies = await fetchData(`${API}/movie`);
         let view = `
         ${movies.id.map(movie => `
             <!-- content -->
