@@ -1,16 +1,12 @@
-const API_KEY = "09e3489b58096b85aab97f051aaef429";
-
-const API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=Batman&page=1`;
+const API = `https://rickandmortyapi.com/api/character`;
 const content = null || document.getElementById('content');
 
 const options = {
     method: 'GET',
     headers: {
-        'Authorization': '09e3489b58096b85aab97f051aaef429', 
         'Content-Type': 'application/json;charset=utf-8',
         'Access-Control-Allow-Origin': 'https://anamendez10.github.io',
         'Access-Control-Allow-Methods': 'GET OPTIONS',
-        'strict-origin-when-cross-origin': 'https://api.themoviedb.org/3/movie'
     }
 }
 
@@ -22,19 +18,19 @@ async function fetchData(urlApi){
 
 (async () => {
     try{
-        const movies = await fetchData(API);
+        const characters = await fetchData(API);
         let view = `
-        ${movies.id.map(movie => `
+        ${characters.results.map(character => `
             <!-- content -->
             <div class="group relative">
                 <div
                 class="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
-                <img src="${movie.images}" alt="img" class="w-full">
+                <img src="${character.image}" alt="img" class="w-full">
                 </div>
                 <div class="mt-4 flex justify-between">
                 <h3 class="text-sm text-gray-700">
                     <span aria-hidden="true" class="absolute inset-0"></span>
-                    ${movie.title}
+                    ${character.name}
                 </h3>
                 </div>
             </div>
