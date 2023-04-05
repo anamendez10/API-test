@@ -1,6 +1,6 @@
-const id = null
+const API_KEY = "09e3489b58096b85aab97f051aaef429";
 
-const API = 'https://api.themoviedb.org/3/movie';
+const API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=Batman&page=1`;
 const content = null || document.getElementById('content');
 
 const options = {
@@ -22,7 +22,7 @@ async function fetchData(urlApi){
 
 (async () => {
     try{
-        const movies = await fetchData(`${API}/${id}?api_key=09e3489b58096b85aab97f051aaef429`);
+        const movies = await fetchData(API);
         let view = `
         ${movies.id.map(movie => `
             <!-- content -->
